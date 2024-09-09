@@ -1,0 +1,4 @@
+IGUI_JP = {
+  IGUI_BOBBY_Playtime = "遊びの時間",
+  IGUI_BOBBY_Playtime_PostDeath = "%1 でプレイしました。"
+}

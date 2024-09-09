@@ -1,0 +1,4 @@
+IGUI_DE = {
+  IGUI_BOBBY_Playtime = "Spielzeit",
+  IGUI_BOBBY_Playtime_PostDeath = "Sie haben für %1 gespielt."
+}

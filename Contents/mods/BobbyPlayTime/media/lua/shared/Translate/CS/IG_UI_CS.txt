@@ -1,0 +1,4 @@
+IGUI_CS = {
+  IGUI_BOBBY_Playtime = "Prázdno",
+  IGUI_BOBBY_Playtime_PostDeath = "Hráli jste za %1."
+}

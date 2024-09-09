@@ -1,0 +1,4 @@
+IGUI_FI = {
+  IGUI_BOBBY_Playtime = "Peliaika",
+  IGUI_BOBBY_Playtime_PostDeath = "Olet pelannut %1."
+}

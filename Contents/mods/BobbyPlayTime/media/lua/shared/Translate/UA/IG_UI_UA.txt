@@ -1,0 +1,4 @@
+IGUI_UA = {
+  IGUI_BOBBY_Playtime = "Час відтворення",
+  IGUI_BOBBY_Playtime_PostDeath = "Ви грали за %1."
+}

@@ -1,0 +1,4 @@
+IGUI_RO = {
+  IGUI_BOBBY_Playtime = "Timp de joacă",
+  IGUI_BOBBY_Playtime_PostDeath = "Ai jucat pentru %1."
+}

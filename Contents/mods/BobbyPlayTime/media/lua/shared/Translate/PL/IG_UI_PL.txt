@@ -1,0 +1,4 @@
+IGUI_PL = {
+  IGUI_BOBBY_Playtime = "Pauza w szkole",
+  IGUI_BOBBY_Playtime_PostDeath = "Gra³eœ dla %1."
+}

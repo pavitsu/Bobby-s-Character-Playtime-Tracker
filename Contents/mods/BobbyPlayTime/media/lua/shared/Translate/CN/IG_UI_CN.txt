@@ -1,0 +1,4 @@
+IGUI_CN = {
+  IGUI_BOBBY_Playtime = "玩耍时间",
+  IGUI_BOBBY_Playtime_PostDeath = "您已为 %1 效力。"
+}

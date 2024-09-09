@@ -1,0 +1,4 @@
+IGUI_TR = {
+  IGUI_BOBBY_Playtime = "Oyun zamaný",
+  IGUI_BOBBY_Playtime_PostDeath = "%1 için oynadýnýz."
+}
