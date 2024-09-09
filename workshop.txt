@@ -48,8 +48,5 @@ description=[*][url=https://steamcommunity.com/profiles/76561199218026428]Polter
 description=[/list]
 description=
 description=This mod is provided as-is and can be freely modified or distributed, as long as credit is given.
-description=
-Workshop ID: 3324840647
-Mod ID: BobbyPlaytime
-tags=Build 41;Framework;Interface;Misc;Multiplayer
+tags=Build 41;Framework;Interface;Language/Translation;Misc;Multiplayer
 visibility=public
