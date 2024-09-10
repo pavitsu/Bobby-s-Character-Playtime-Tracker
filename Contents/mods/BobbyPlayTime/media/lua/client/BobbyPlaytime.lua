@@ -1,10 +1,6 @@
 local Json = require("Json")
-
-local smallFontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
-local textWid1 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Favourite_Weapon"))
-local textWid2 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Zombies_Killed"))
-local textWid3 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Survived_For"))
-local x = 20 + math.max(textWid1, math.max(textWid2, textWid3))
+local FONT_HGT_SMALL = getTextManager():getFontHeight(UIFont.Small)
+local FONT_HGT_MEDIUM = getTextManager():getFontHeight(UIFont.Medium)
 local total_playtime = 0
 local start_session_time = os.time()
 local end_time = os.time()
@@ -16,7 +12,47 @@ local function pluralize(value, singular, plural)
     return value <= 1 and singular or plural
 end
 
+function ISCharacterScreen:BobbyPlaytime_getTraitBottom()
+    -- Get "trait bottom" height, so "Playtime" text on character screen doesn't get cut
+    -- reference to function ISCharacterScreen:render()
+    local z = 25
+    z = z + FONT_HGT_MEDIUM
+    z = z + 10
+    local smallFontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
+    z = z + smallFontHgt;
+    z = z + smallFontHgt;
+	local traitBottom = z
+	-- local finalY = z + (math.max(FONT_HGT_SMALL, 18) - 18) / 2 + 2;
+	if #self.traits > 0 then
+        -- comment out, so it doesn't duplicate text "Traits"
+		-- self:drawTextRight(getText("IGUI_char_Traits"), self.xOffset, z, 1,1,1,1, UIFont.Small);
+		local x = self.xOffset + 10;
+		local y = z + (math.max(FONT_HGT_SMALL, 18) - 18) / 2 + 2
+		for i,v in ipairs(self.traits) do
+			v:setY(y);
+			v:setX(x);
+            -- comment out, so it doesn't duplicate texture picture "Trait"
+            -- v:setVisible(true);
+			traitBottom = y + v:getTexture():getHeightOrig() + 2
+			x = x + v:getTexture():getWidthOrig() + 6;
+			if (i < #self.traits) and (x + v:getTexture():getWidthOrig() > self:getWidth() - 20) then
+				x = self.xOffset + 10
+				y = y + v:getTexture():getHeightOrig() + 2
+			end
+		end
+		-- finalY = y + self.traits[1]:getTexture():getHeightOrig();
+	end
+
+	-- finalY = finalY + 20;
+    return traitBottom
+end
+
 function ISCharacterScreen:render_BobbyPlaytimeInfo()
+    local smallFontHgt = getTextManager():getFontFromEnum(UIFont.Small):getLineHeight()
+    local textWid1 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Favourite_Weapon"))
+    local textWid2 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Zombies_Killed"))
+    local textWid3 = getTextManager():MeasureStringX(UIFont.Small, getText("IGUI_char_Survived_For"))
+    local x = 20 + math.max(textWid1, math.max(textWid2, textWid3))
     local elapsed_seconds = end_time - start_session_time + total_playtime
     -- Calculate hours, minutes, and seconds
     local hours = math.floor((elapsed_seconds / 3600))
@@ -38,8 +74,13 @@ function ISCharacterScreen:render_BobbyPlaytimeInfo()
         -- If no larger units are present, only show seconds
         elapsed_time = elapsed_time .. string.format("%d ", seconds) .. pluralize(seconds, getText("IGUI_Gametime_second"), getText("IGUI_Gametime_secondes"))
     end
-    local z = self.height - 80 + smallFontHgt;
+    local traitBottom = self:BobbyPlaytime_getTraitBottom()
+    local z = self.literatureButton:getBottom();
+	z = math.max(z + 16, traitBottom);
+	z = math.max(z, self.avatarY + self.avatarHeight + 25)
+    z = z - smallFontHgt
 
+    -- local z = self.height - 80 + smallFontHgt;
     self:drawTextRight(getText("IGUI_BOBBY_Playtime"), x, z, 1, 1, 1, 1, UIFont.Small);
     self:drawText(elapsed_time, x + 10, z, 1, 1, 1, 0.5, UIFont.Small);
 end
@@ -55,7 +96,6 @@ end
 function BobbyPlaytime_updateplaytime()
     end_time = os.time()
 end
-
 
 function BobbyPlaytime_saveJsonData()
     local fileWriterObj = getFileWriter("bobby_playtime_data.json", true, false)

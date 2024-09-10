@@ -7,16 +7,16 @@ description=[h3]Features[/h3]
 description=[list]
 description=[*]Tracks real-life playtime for each character.
 description=[*]Playtime persists even after quitting the game.
-description=[*]Compatible with existing save games (playtime will start from zero).
+description=[*]Compatible with existing save games, or existing server (playtime will start from zero).
 description=[*]Editable playtime data through a simple JSON file.
 description=[*]Multiplayer support (but it only runs on the client side).
-description=[*]Multi-language support (AR, CA, CH, CN, CS, DA, DE, EN, ES, FI, FR, HU, ID, IT, JP, KO, NL, NO, PH, PL, PT, PTBR, RO, RU, TH, TR, UA) [i]need some help with correction, because I used auto-translation for this[/i]
+description=[*]Multi-language support (AR, CA, CH, CN, CS, DA, DE, EN, ES, FI, FR, HU, ID, IT, JP, KO, NL, NO, PH, PL, PT, PTBR, RO, RU, TH, TR, UA) [i]need some help with correction, because I used auto-translation[/i]
 description=[/list]
 description=
-description=[h3]How Does It Work?[/h3]
+description=[h3]How does it work?[/h3]
 description=For every ten minutes of in-game time, the mod will track and increment real-life playtime (even if the game is paused or you're on the ESC screen). After you quit the game (or trigger a save event), the mod will automatically save your playtime in seconds.
 description=
-description=[h3]How to Edit My Character Playtime?[/h3]
+description=[h3]How to edit my character playtime?[/h3]
 description=[olist]
 description=[*]Subscribe to the mod and enable it on your existing save game.
 description=[*]Load your game, and you'll see your playtime starting at 0-10 seconds.
@@ -30,7 +30,7 @@ description=[h3]Is this mod compatible with other mods?[/h3]
 description=This mod may have issues with other mods that alter the character UI or post death UI. Further testing will be required.
 description=
 description=[b]Compatible Mod[/b]
-description=The following mods have been tested and are confirmed to work:
+description=The following mods have been tested and are confirmed to work with:
 description=[list]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553809727]KillCount[/url]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3245854570]Bigger Character Avatar[/url]
@@ -42,11 +42,11 @@ description=[list]
 description=[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2012990668]Reorganized Info Screen[/url]
 description=[/list]
 description=
-description=[h3]Thank for[/h3]
+description=[h3]Thank[/h3]
 description=[list]
 description=[*][url=https://steamcommunity.com/profiles/76561199218026428]Poltergeist[/url] for  [url=https://github.com/Poltergeist-PZ-Modding/pz-translator]pz-translator[/url] thats create auto-translation for multi-languege support.
 description=[/list]
 description=
-description=This mod is provided as-is and can be freely modified or distributed, as long as credit is given.
-tags=Build 41;Framework;Interface;Language/Translation;Misc;Multiplayer
+Github : [url=https://github.com/pavitsu/Bobby-s-Character-Playtime-Tracker/tree/main]Link[/url]
+tags=Build 41;Interface;Language/Translation;Misc;Multiplayer
 visibility=public
