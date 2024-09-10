@@ -47,6 +47,6 @@ description=[list]
 description=[*][url=https://steamcommunity.com/profiles/76561199218026428]Poltergeist[/url] for  [url=https://github.com/Poltergeist-PZ-Modding/pz-translator]pz-translator[/url] thats create auto-translation for multi-languege support.
 description=[/list]
 description=
-Github : [url=https://github.com/pavitsu/Bobby-s-Character-Playtime-Tracker/tree/main]Link[/url]
+description=Github : [url=https://github.com/pavitsu/Bobby-s-Character-Playtime-Tracker/tree/main]Link[/url]
 tags=Build 41;Interface;Language/Translation;Misc;Multiplayer
 visibility=public
